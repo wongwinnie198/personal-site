@@ -20,5 +20,7 @@ class Jumbotron {
 }
 
 let jumbotronComponent = new Jumbotron();
-
-document.querySelector(".jumbotron").innerHTML = jumbotronComponent.render();
+document.addEventListener("DOMContentLoaded", function () {
+  console.log(document.querySelector(".jumbotron"));
+  document.querySelector(".jumbotron").innerHTML = jumbotronComponent.render();
+});

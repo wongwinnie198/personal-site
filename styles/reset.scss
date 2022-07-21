@@ -7,6 +7,7 @@
 	HTML5 Doctor				:: http://html5doctor.com
 	and the HTML5 Boilerplate	:: http://html5boilerplate.com
 
+	credit: https://github.com/murtaugh/HTML5-Reset/blob/master/assets/css/reset.css
 -------------------------------------------------------------------------------*/
 
 /* Let's default this puppy out
@@ -69,7 +70,7 @@ blockquote:after,
 q:before,
 q:after {content: ''; content: none;}
 
-a {margin: 0; padding: 0; font-size: 100%; vertical-align: baseline; background: transparent;}
+a {margin: 0; padding: 0; font-size: 100%; vertical-align: baseline; background: transparent; text-decoration: none;}
 
 del {text-decoration: line-through;}
 

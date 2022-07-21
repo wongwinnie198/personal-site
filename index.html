@@ -4,9 +4,34 @@
     <meta charset="utf-8" />
     <link rel="stylesheet" type="text/css" href="styles/reset.css" />
     <link rel="stylesheet" type="text/css" href="styles/style.css" />
+
+    <!-- <script type="text/javascript" src="components/NavBar.js"></script>
+    <script type="text/javascript" src="components/Jumbotron.js"></script> -->
     <title>Winnie Wong</title>
   </head>
   <body>
-    <p>This is a paragraph.</p>
+    <div class="jumbotron"></div>
+    <div class="page"></div>
+    <script>
+      
+
+      function loadScript(url) {
+        var head = document.getElementsByTagName("head")[0];
+        var script = document.createElement("script");
+        script.type = "text/javascript";
+        script.src = url;
+        head.appendChild(script);
+      }
+      
+      async function onReady () {
+        await loadScript("components/NavBar.js");
+        await loadScript("components/Jumbotron.js");
+
+      }
+
+      (function () {
+        onReady();
+      })();
+    </script>
   </body>
 </html>

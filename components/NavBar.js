@@ -28,5 +28,6 @@ class NavBar {
 }
 
 let navBarComponent = new NavBar(navBarItems);
-
-document.querySelector("body").innerHTML = navBarComponent.render();
+document.addEventListener("DOMContentLoaded", function () {
+  document.querySelector("body").innerHTML = navBarComponent.render();
+});

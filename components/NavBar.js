@@ -14,7 +14,7 @@ class NavBar {
   }
 
   render() {
-    return `<nav>
+    return `
                 <ul>
                     <li class="nav-item"><a href="#">About</a></li>
                     <li class="nav-item"><a href="#">Personal Project</a></li>
@@ -23,11 +23,11 @@ class NavBar {
                     <li class="nav-item"><a href="#">Github icon</a></li>
                     <li class="nav-item"><a href="#">email icon</a></li>
                 </ul>
-              </nav>`;
+              `;
   }
 }
 
 let navBarComponent = new NavBar(navBarItems);
 document.addEventListener("DOMContentLoaded", function () {
-  document.querySelector("body").innerHTML = navBarComponent.render();
+  document.querySelector("nav").innerHTML = navBarComponent.render();
 });

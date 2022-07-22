@@ -48,6 +48,12 @@
     cursor: pointer;
     display: none;
   }
+  #nav-list {
+    visibility: visible;
+    flex-direction: row;
+    position: static;
+    width: auto;
+  }
   #nav-list a {
     cursor: pointer;
   }

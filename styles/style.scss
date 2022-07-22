@@ -50,8 +50,15 @@
     cursor: pointer;
     display: none;
   }
-  #nav-list a {
-    cursor: pointer;
+
+  #nav-list {
+    visibility: visible;
+    flex-direction: row;
+    position: static;
+    width: auto;
+    a {
+      cursor: pointer;
+    }
   }
   .nav-item {
     padding: 0 0.25rem;

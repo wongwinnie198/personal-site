@@ -4,48 +4,13 @@
     <meta charset="utf-8" />
     <link rel="stylesheet" type="text/css" href="styles/reset.css" />
     <link rel="stylesheet" type="text/css" href="styles/style.css" />
-
-    <script>
-      document.addEventListener("DOMContentLoaded", function () {
-        function loadScript(url) {
-          return new Promise(function (resolve, reject) {
-            let script = document.createElement("script");
-            script.src = url;
-            script.async = false;
-            script.onload = function () {
-              resolve(url);
-            };
-            script.onerror = function () {
-              reject(url);
-            };
-            console.log(
-              "🚀 ~ file: index.html ~ line 21 ~ body",
-              document.body
-            );
-            document.body.appendChild(script);
-          });
-        }
-
-        let scripts = ["components/NavBar.js", "components/Jumbotron.js"];
-        let promises = [];
-        scripts.forEach(function (url) {
-          promises.push(loadScript(url));
-        });
-
-        Promise.all(promises)
-          .then(function () {
-            console.log("all scripts loaded");
-          })
-          .catch((err) => console.log(err));
-      });
-    </script>
-
-    <!-- <script type="text/javascript" src="components/NavBar.js"></script>
-    <script type="text/javascript" src="components/Jumbotron.js"></script> -->
     <title>Winnie Wong</title>
   </head>
   <body>
+    <nav class="globNav"></nav>
     <div class="jumbotron"></div>
     <div class="page"></div>
+    <script type="text/javascript" src="components/NavBar.js"></script>
+    <script type="text/javascript" src="components/Jumbotron.js"></script>
   </body>
 </html>

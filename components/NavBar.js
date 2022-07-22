@@ -16,19 +16,35 @@ class NavBar {
   onMenuClick() {
     let menuIcon = document.getElementById("menu-icon");
     let navlist = document.getElementById("nav-list");
+    console.log(
+      // "🚀 ~ file: NavBar.js ~ line 18 ~ NavBar ~ onMenuClick ~ getElementById",
+      getComputedStyle(navlist).visibility,
+      typeof getComputedStyle(navlist).visibility
+    );
+    let menuIconBar = document.getElementById("menu-icon-bar");
+    let menuIconTimes = document.getElementById("menu-icon-times");
     let responsiveClassName = "nav-responsive";
-    menuIcon.classList.toggle(responsiveClassName);
-    if ((navlist.style.visibility = "hidden")) {
+
+    // menuIcon.classList.toggle(responsiveClassName);
+    if (getComputedStyle(navlist).visibility == "hidden") {
+      console.log("🚀 ~ file: NavBar.js ~ line 26 ~ NavBar ~ onMenuClick ~ if");
       navlist.style.visibility = "visible";
-    } else {
+      menuIconBar.style.display = "none";
+      menuIconTimes.style.display = "block";
+    } else if (getComputedStyle(navlist).visibility == "visible") {
+      console.log(
+        "🚀 ~ file: NavBar.js ~ line 34 ~ NavBar ~ onMenuClick ~ navlist"
+      );
       navlist.style.visibility = "hidden";
+      menuIconBar.style.display = "block";
+      menuIconTimes.style.display = "none";
     }
   }
   render() {
     const [logoDiv, navListDiv, navIcon] = [
       document.createElement("div"),
       document.createElement("div"),
-      document.createElement("a"),
+      document.createElement("div"),
     ];
     Object.assign(logoDiv, { className: "logo", id: "logo" });
     logoDiv.innerHTML = `Winnie`;
@@ -44,7 +60,9 @@ class NavBar {
     `;
 
     Object.assign(navIcon, { className: "menu-icon", id: "menu-icon" });
-    navIcon.innerHTML = `<i class="fa fa-bars"></i>`;
+    navIcon.innerHTML = `<i class="fa fa-bars" id ="menu-icon-bar"></i>
+    <h1 id="menu-icon-times">X</h1>
+    `;
 
     return [logoDiv, navListDiv, navIcon];
   }
@@ -56,7 +74,6 @@ document.addEventListener("DOMContentLoaded", function () {
     .render()
     .forEach((item) => document.querySelector("nav").appendChild(item));
 
-  const[, , navIcon] = navBarComponent.render();
-  // navIcon.addEventListener("click", navBarComponent.onMenuClick);
-  document.getElementById('menu-icon').onclick = navBarComponent.onMenuClick;
+  const [, , navIcon] = navBarComponent.render();
+  document.getElementById("menu-icon").onclick = navBarComponent.onMenuClick;
 });

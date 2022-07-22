@@ -19,6 +19,13 @@
 
 .menu-icon {
   display: block;
+  z-index: 10;
+  #menu-icon-bar {
+    display: block;
+  }
+  #menu-icon-times {
+    display: none;
+  }
 }
 
 #nav-list {

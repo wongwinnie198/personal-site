@@ -1,1 +1,50 @@
-/*# sourceMappingURL=style.css.map */
+@import url("https://fonts.googleapis.com/css2?family=DM+Serif+Display&display=swap");
+.globNav {
+  overflow: hidden;
+  background-color: red;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 2rem;
+  font-family: "DM Serif Display", serif;
+}
+
+.logo {
+  text-transform: uppercase;
+  letter-spacing: 0.25rem;
+  font-size: 1.5rem;
+}
+
+.menu-icon {
+  display: block;
+}
+
+#nav-list {
+  visibility: hidden;
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: yellow;
+  text-align: center;
+}
+
+#nav-list .nav-responsive {
+  display: block;
+}
+
+@media (min-width: 768px) {
+  .menu-icon {
+    color: white;
+    cursor: pointer;
+    display: none;
+  }
+  #nav-list a {
+    cursor: pointer;
+  }
+  .nav-item {
+    padding: 0 0.25rem;
+  }
+}/*# sourceMappingURL=style.css.map */

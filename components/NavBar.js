@@ -39,7 +39,8 @@ class NavBar {
   }
 
   onMenuScreenResize() {
-    if (window.screen.width > "768px") {
+    let navlist = document.getElementById("nav-list");
+    if (window.screen.width > "820px") {
       navlist.style.visibility = "visible";
     }
     navlist.style.visibility = "none";
@@ -66,7 +67,7 @@ class NavBar {
 
     Object.assign(navIcon, { className: "menu-icon", id: "menu-icon" });
     navIcon.innerHTML = `<i class="fa fa-bars" id ="menu-icon-bar"></i>
-    <h1 id="menu-icon-times">X</h1>
+    <i class="fa fa-times" id="menu-icon-times"></i>
     `;
 
     return [logoDiv, navListDiv, navIcon];

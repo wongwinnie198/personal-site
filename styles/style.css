@@ -3,6 +3,10 @@
   font-family: "jumbotronTitleFont";
   src: url("../public/FontsFree-Net-Proxima-Nova-Bold.otf");
 }
+@font-face {
+  font-family: "Proxima Nova";
+  src: url("../public/FontsFree-Net-FontsFree-Net-Proxima-Nova-1.ttf");
+}
 .globNav {
   overflow: hidden;
   background-color: black;
@@ -80,7 +84,7 @@
   font-size: 4rem;
   font-weight: bold;
   padding-top: 2rem;
-  height: calc(100vh - 65px);
+  height: 100vh;
 }
 .jumbotron p {
   color: #757575;
@@ -245,4 +249,25 @@
     align-self: center;
     padding: 0rem 8rem;
   }
+}
+.footer-container {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  padding: 1rem 1rem;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  background: black;
+  color: white;
+  font-family: "Proxima Nova";
+}
+.footer-container a {
+  color: inherit;
+}
+.footer-container .footer-icon {
+  text-align: center;
+  padding: 0.25rem;
 }/*# sourceMappingURL=style.css.map */

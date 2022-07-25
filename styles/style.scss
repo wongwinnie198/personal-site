@@ -12,6 +12,10 @@ $mediumBreakpoint: 812px;
   font-family: "jumbotronTitleFont";
   src: url("../public/FontsFree-Net-Proxima-Nova-Bold.otf");
 }
+@font-face {
+  font-family: "Proxima Nova";
+  src: url("../public/FontsFree-Net-FontsFree-Net-Proxima-Nova-1.ttf");
+}
 
 // navigation
 .globNav {
@@ -94,7 +98,8 @@ $mediumBreakpoint: 812px;
   font-size: 4rem;
   font-weight: bold;
   padding-top: 2rem;
-  height: calc(100vh - 65px);
+  // height: calc(100vh - 65px);
+  height: 100vh;
   p {
     color: $jumbotronParagraphs;
     font-size: $jumbotronParagraphFontSize;
@@ -134,13 +139,11 @@ $mediumBreakpoint: 812px;
     text-align: center;
   }
   .web-heading {
-    // align-self: flex-start;
     // animation-name: slide-from-left;
     animation-duration: 2s;
     animation-iteration-count: 1;
   }
   .coder-heading {
-    // align-self: flex-end;
     // animation-name: slide-from-right;
     animation-duration: 2s;
     animation-iteration-count: 1;
@@ -227,3 +230,26 @@ $mediumBreakpoint: 812px;
 }
 
 //footer
+.footer-container {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  padding: 1rem 1rem;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  background: $footerBackground;
+  color: $footerColor;
+  font-family: "Proxima Nova";
+  a {
+    color: inherit;
+  }
+  .footer-icon {
+    text-align: center;
+    padding: 0.25rem;
+  }
+
+
+}

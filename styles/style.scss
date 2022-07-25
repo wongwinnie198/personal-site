@@ -1,6 +1,17 @@
 @use "sass:math";
+
 @import "utils/colors";
 @import "utils/font";
+
+$paddingSideJumbotronWordsDesktop: 8rem;
+$jumbotronParagraphFontSize: 1rem;
+
+$mediumBreakpoint: 812px;
+
+@font-face {
+  font-family: "jumbotronTitleFont";
+  src: url("../public/FontsFree-Net-Proxima-Nova-Bold.otf");
+}
 
 // navigation
 .globNav {
@@ -9,28 +20,33 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0.5rem 3rem;
+  padding: 1rem 3rem;
   font-family: $nav-font;
 }
 .logo {
   text-transform: uppercase;
   letter-spacing: 0.25rem;
   font-size: 1.5rem;
+  //TODO remove
+  color: black;
 }
 
 .menu-icon {
   display: block;
-  z-index: 10;
+  z-index: 100;
+  color: white;
   #menu-icon-bar {
     display: block;
   }
   #menu-icon-times {
     display: none;
+    color: white;
   }
 }
 
 #nav-list {
   visibility: hidden;
+  background: $navlistBg;
   display: flex;
   flex-direction: column;
   position: absolute;
@@ -39,16 +55,14 @@
   width: 100%;
   height: 100vh;
   text-align: center;
+  z-index: 50;
   .nav-item {
+    color: $navlistColor;
     padding: math.div(6vh, 100vh) * 100% 0;
   }
 }
 
-#nav-list .nav-responsive {
-  display: block;
-}
-
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: $mediumBreakpoint) {
   .menu-icon {
     color: white;
     cursor: pointer;
@@ -66,7 +80,150 @@
       padding: 0 0.5rem;
     }
   }
-  .nav-item {
+  justify .nav-item {
     padding: 0 0.25rem;
   }
 }
+
+//jumbotron
+.jumbotron {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  font-family: "jumbotronTitleFont";
+  font-size: 4rem;
+  font-weight: bold;
+  padding-top: 2rem;
+  height: calc(100vh - 65px);
+  p {
+    color: $jumbotronParagraphs;
+    font-size: $jumbotronParagraphFontSize;
+  }
+  img {
+    height: auto;
+    // padding-top: 3rem;
+  }
+  .images {
+    position: relative;
+    width: 100%;
+    // animation-name: emerge-middle;
+    animation-duration: 2s;
+    animation-iteration-count: 1;
+    top: 0;
+    left: 0;
+    img:nth-child(1) {
+      position: absolute;
+      z-index: 20;
+      width: 100%;
+    }
+    img:nth-child(2) {
+      position: absolute;
+      z-index: 10;
+      width: 100%;
+    }
+    img:nth-child(3) {
+      position: absolute;
+      z-index: 10;
+      opacity: 30%;
+      border-radius: 50%;
+      width: 100%;
+    }
+  }
+  .web-heading,
+  .coder-heading {
+    text-align: center;
+  }
+  .web-heading {
+    // align-self: flex-start;
+    // animation-name: slide-from-left;
+    animation-duration: 2s;
+    animation-iteration-count: 1;
+  }
+  .coder-heading {
+    // align-self: flex-end;
+    // animation-name: slide-from-right;
+    animation-duration: 2s;
+    animation-iteration-count: 1;
+  }
+}
+
+@keyframes emerge-middle {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes slide-from-left {
+  0% {
+    opacity: 0;
+    padding-left: 0;
+  }
+  50% {
+    opacity: 0.5;
+    padding-left: 3rem;
+  }
+  100% {
+    opacity: 1;
+    padding-left: $paddingSideJumbotronWordsDesktop;
+  }
+}
+@keyframes slide-from-right {
+  0% {
+    opacity: 0;
+    padding-right: 0;
+  }
+  50% {
+    opacity: 0.5;
+    padding-right: 3rem;
+  }
+  100% {
+    opacity: 1;
+    padding-right: $paddingSideJumbotronWordsDesktop;
+  }
+}
+
+@media only screen and (min-width: $mediumBreakpoint) {
+  .jumbotron {
+    flex-direction: row;
+
+    .images {
+      order: 2;
+      height: auto;
+      img {
+        &:nth-child(1) {
+          top: 5rem;
+          left: 5rem;
+          width: 800px;
+        }
+        &:nth-child(2) {
+          top: 15rem;
+          right: 30%;
+          width: 500px;
+        }
+        &:nth-child(3) {
+          top: 20rem;
+          left: 50%;
+          width: 500px;
+        }
+      }
+    }
+    .web-heading {
+      order: 1;
+      align-self: center;
+      padding: 0rem $paddingSideJumbotronWordsDesktop;
+    }
+    .coder-heading {
+      order: 3;
+      align-self: center;
+      padding: 0rem $paddingSideJumbotronWordsDesktop;
+    }
+  }
+}
+
+//footer

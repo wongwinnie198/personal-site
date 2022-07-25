@@ -1,11 +1,11 @@
 @import url("https://fonts.googleapis.com/css2?family=DM+Serif+Display&display=swap");
 .globNav {
   overflow: hidden;
-  background-color: red;
+  background-color: linear-gradient(0deg, rgb(255, 255, 255) 0%, rgb(244, 244, 245) 100%);
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0.5rem 2rem;
+  padding: 0.5rem 3rem;
   font-family: "DM Serif Display", serif;
 }
 
@@ -35,15 +35,17 @@
   left: 0;
   width: 100%;
   height: 100vh;
-  background-color: yellow;
   text-align: center;
+}
+#nav-list .nav-item {
+  padding: 6% 0;
 }
 
 #nav-list .nav-responsive {
   display: block;
 }
 
-@media (min-width: 768px) {
+@media only screen and (min-width: 768px) {
   .menu-icon {
     color: white;
     cursor: pointer;
@@ -53,11 +55,12 @@
     visibility: visible;
     flex-direction: row;
     position: static;
-    height: auto;
+    height: inherit;
     width: auto;
   }
-  #nav-list a {
+  #nav-list .nav-item {
     cursor: pointer;
+    padding: 0 0.5rem;
   }
   .nav-item {
     padding: 0 0.25rem;

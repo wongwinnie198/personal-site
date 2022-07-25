@@ -1,14 +1,15 @@
+@use "sass:math";
 @import "utils/colors";
 @import "utils/font";
 
 // navigation
 .globNav {
   overflow: hidden;
-  background-color: red;
+  background-color: $navBg;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0.5rem 2rem;
+  padding: 0.5rem 3rem;
   font-family: $nav-font;
 }
 .logo {
@@ -37,15 +38,17 @@
   left: 0;
   width: 100%;
   height: 100vh;
-  background-color: yellow;
   text-align: center;
+  .nav-item {
+    padding: math.div(6vh, 100vh) * 100% 0;
+  }
 }
 
 #nav-list .nav-responsive {
   display: block;
 }
 
-@media (min-width: 768px) {
+@media only screen and (min-width: 768px) {
   .menu-icon {
     color: white;
     cursor: pointer;
@@ -56,10 +59,11 @@
     visibility: visible;
     flex-direction: row;
     position: static;
-    height: auto;
+    height: inherit;
     width: auto;
-    a {
+    .nav-item {
       cursor: pointer;
+      padding: 0 0.5rem;
     }
   }
   .nav-item {

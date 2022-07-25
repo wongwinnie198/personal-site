@@ -17,15 +17,12 @@ class NavBar {
     let menuIcon = document.getElementById("menu-icon");
     let navlist = document.getElementById("nav-list");
     console.log(
-      // "🚀 ~ file: NavBar.js ~ line 18 ~ NavBar ~ onMenuClick ~ getElementById",
       getComputedStyle(navlist).visibility,
       typeof getComputedStyle(navlist).visibility
     );
     let menuIconBar = document.getElementById("menu-icon-bar");
     let menuIconTimes = document.getElementById("menu-icon-times");
-    let responsiveClassName = "nav-responsive";
 
-    // menuIcon.classList.toggle(responsiveClassName);
     if (getComputedStyle(navlist).visibility == "hidden") {
       console.log("🚀 ~ file: NavBar.js ~ line 26 ~ NavBar ~ onMenuClick ~ if");
       navlist.style.visibility = "visible";
@@ -40,6 +37,14 @@ class NavBar {
       menuIconTimes.style.display = "none";
     }
   }
+
+  onMenuScreenResize() {
+    if (window.screen.width > "768px") {
+      navlist.style.visibility = "visible";
+    }
+    navlist.style.visibility = "none";
+  }
+
   render() {
     const [logoDiv, navListDiv, navIcon] = [
       document.createElement("div"),
@@ -51,12 +56,12 @@ class NavBar {
 
     Object.assign(navListDiv, { className: "nav-list", id: "nav-list" });
     navListDiv.innerHTML = `
-    <a class="nav-item href="#">About</a>
-    <a class="nav-item href="#">Personal Project</a>
-    <a class="nav-item href="#">Opensource Project</a>
-    <a class="nav-item href="#">Writing</a>
-    <a class="nav-item href="#">Github icon</a>
-    <a class="nav-item href="#">email icon</a>
+    <a class="nav-item" href="#">About</a>
+    <a class="nav-item" href="#">Personal Project</a>
+    <a class="nav-item" href="#">Opensource Project</a>
+    <a class="nav-item" href="#">Writing</a>
+    <a class="nav-item" href="#">Github icon</a>
+    <a class="nav-item" href="#">email icon</a>
     `;
 
     Object.assign(navIcon, { className: "menu-icon", id: "menu-icon" });
@@ -76,4 +81,5 @@ document.addEventListener("DOMContentLoaded", function () {
 
   const [, , navIcon] = navBarComponent.render();
   document.getElementById("menu-icon").onclick = navBarComponent.onMenuClick;
+  window.onresize = navBarComponent.onMenuScreenResize;
 });

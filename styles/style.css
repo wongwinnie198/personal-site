@@ -251,6 +251,7 @@
   }
 }
 .footer-container {
+  z-index: 100;
   position: fixed;
   left: 0;
   bottom: 0;
@@ -269,5 +270,4 @@
 }
 .footer-container .footer-icon {
   text-align: center;
-  padding: 0.25rem;
 }/*# sourceMappingURL=style.css.map */

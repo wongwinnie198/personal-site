@@ -1,0 +1,36 @@
+.project-container {
+  width: 100%;
+  padding: 0 0 2rem 0;
+}
+.project-container #project-title {
+  text-align: center;
+}
+.project-container #project-title::before {
+  border-top: 1px solid #1072B8;
+  display: block;
+  position: relative;
+  top: -25px;
+  margin: 0 auto;
+  width: 25%;
+  content: "";
+}
+.project-container .card-container {
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+}
+.project-container .card-container .card-items {
+  padding: 2rem;
+  flex: 1 0 33.3%;
+}
+
+@media (min-width: 768px) and (max-width: 1280px) {
+  .card-container {
+    max-width: 800px;
+  }
+}
+@media (min-width: 1280px) and (max-width: 1920px) {
+  .card-container {
+    max-width: 1000px;
+  }
+}/*# sourceMappingURL=project.css.map */

@@ -3,6 +3,8 @@
 @import "utils/colors";
 @import "utils/font";
 
+@import "project.scss";
+
 $paddingSideJumbotronWordsDesktop: 8rem;
 $jumbotronParagraphFontSize: 1rem;
 
@@ -232,9 +234,6 @@ $mediumBreakpoint: 812px;
 //footer
 .footer-container {
   z-index:100;
-  position: fixed;
-  left: 0;
-  bottom: 0;
   width: 100%;
   padding: 1rem 1rem;
   width: 100%;

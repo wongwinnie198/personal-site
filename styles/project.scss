@@ -1,0 +1,55 @@
+@import "breakpoints.scss";
+
+.project-container {
+  width: 100%;
+  padding: 0 0 2rem 0;
+  #project-title {
+    text-align: center;
+    &::before{
+        border-top: 1px solid #1072B8;
+        display: block;
+        position: relative;
+        top: -25px;
+        margin: 0 auto;
+        width: 25%;
+        content: "";
+    }
+  }
+  .card-container {
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    .card-items{
+        padding: 2rem;
+        flex: 1 0 33.3%;
+    }
+  }
+}
+
+//width
+// ">=phone", "<tablet"
+@media (min-width: $breakpoint-phone) and (max-width: $breakpoint-tablet) {
+}
+@media (min-width: $breakpoint-tablet) and (max-width: $breakpoint-laptop) {
+  .card-container {
+    max-width: 800px;
+  }
+}
+@media (min-width: $breakpoint-laptop) and (max-width: $breakpoint-desktop) {
+  .card-container {
+    max-width: 1000px;
+  }
+}
+
+// @media only screen and (min-width: $breakpoint-laptop) {
+//   .card-container {
+//     // max-width: 1000px;
+//   }
+// }
+// @media only screen and (min-width: $breakpoint-tablet) {
+//   .card-container {
+//     // max-width: 800px;
+//   }
+// }
+// @media only screen and (min-width: $breakpoint-phone) {
+// }

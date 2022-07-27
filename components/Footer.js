@@ -21,7 +21,7 @@ class Footer {
     `;
     Object.assign(copyRightContainer, { className: "footer-copyright" });
     copyRightContainer.innerHTML = `
-    <p>copyright &copy;2021 <a href="#">Winnie Wong</a></p>
+    <p>copyright &copy;2022 <a href="#">Winnie Wong</a></p>
 
     `;
     

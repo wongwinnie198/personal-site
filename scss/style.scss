@@ -1,9 +1,9 @@
 @use "sass:math";
 
-@import "utils/colors";
-@import "utils/font";
-
-@import "project.scss";
+@import "colors";
+@import "font";
+@import "_breakpoints.scss";
+@import "_space.scss";
 
 $paddingSideJumbotronWordsDesktop: 8rem;
 $jumbotronParagraphFontSize: 1rem;
@@ -12,12 +12,17 @@ $mediumBreakpoint: 812px;
 
 @font-face {
   font-family: "jumbotronTitleFont";
-  src: url("../public/FontsFree-Net-Proxima-Nova-Bold.otf");
+  src: url("../../public/FontsFree-Net-Proxima-Nova-Bold.otf");
 }
 @font-face {
   font-family: "Proxima Nova";
-  src: url("../public/FontsFree-Net-FontsFree-Net-Proxima-Nova-1.ttf");
+  src: url("../../public/FontsFree-Net-FontsFree-Net-Proxima-Nova-1.ttf");
 }
+@font-face {
+  font-family: "Proxima Nova Light";
+  src: url("../../public/FontsFree-Net-FontsFree-Net-Proxima-Nova-Light.ttf");
+}
+
 
 // navigation
 .globNav {
@@ -231,9 +236,86 @@ $mediumBreakpoint: 812px;
   }
 }
 
+//project
+main {
+  background-color: $mainBgColor;
+}
+.project-container {
+  width: 100%;
+  #project-title {
+    text-align: center;
+    text-transform: uppercase;
+    font-family: "Proxima Nova Light";
+    padding: calc($projectTitleVerticalPadding * 2) 0
+      $projectTitleVerticalPadding 0;
+    &::after {
+      border-top: 2px solid $projectTitleUnderBorder;
+      display: block;
+      position: relative;
+      top: $projectTitleVerticalPadding - calc($projectTitleVerticalPadding/2);
+      margin: 0 auto;
+      width: 25%;
+      content: "";
+    }
+  }
+  .card-container {
+    margin: 0 auto;
+    padding: 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    .card-items {
+      font-family: "Proxima Nova Light";
+      padding: 1rem;
+      display:flex;
+      flex-direction: column;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+      cursor: pointer;
+      .card-title{
+        font-size: 1.5rem;
+        padding-top: 0.5rem;
+        color: $cardTitleColor;
+
+      }
+      .card-desc{
+        color: $cardDescColor;
+        height: 5rem;
+        overflow-y: scroll;
+      }
+    }
+  }
+}
+
+//width
+// ">=phone", "<tablet"
+@media only screen and (min-width: $breakpoint-phone) and (max-width: $breakpoint-tablet) {
+  .card-container {
+    .card-items {
+      flex: 1 0 100%;
+    }
+  }
+}
+@media only screen and (min-width: $breakpoint-tablet) and (max-width: $breakpoint-laptop) {
+  .card-container {
+    // justify-content: center;
+    max-width: 800px;
+    .card-items {
+      flex: 1 0 100%;
+    }
+  }
+}
+@media only screen and (min-width: $breakpoint-laptop) {
+  .card-container {
+    max-width: 1000px;
+    .card-items {
+      flex: 0 0 33%;
+    }
+  }
+}
+
 //footer
 .footer-container {
-  z-index:100;
+  z-index: 100;
   width: 100%;
   padding: 1rem 1rem;
   width: 100%;
@@ -249,6 +331,4 @@ $mediumBreakpoint: 812px;
   .footer-icon {
     text-align: center;
   }
-
-
 }

@@ -5,11 +5,11 @@
 .project-container #project-title {
   text-align: center;
 }
-.project-container #project-title::before {
-  border-top: 1px solid #1072B8;
+.project-container #project-title::after {
+  border-top: 1px solid #1072b8;
   display: block;
   position: relative;
-  top: -25px;
+  top: -50px;
   margin: 0 auto;
   width: 25%;
   content: "";
@@ -24,12 +24,24 @@
   flex: 1 0 33.3%;
 }
 
-@media (min-width: 768px) and (max-width: 1280px) {
-  .card-container {
-    max-width: 800px;
+@media only screen and (min-width: 375px) and (max-width: 768px) {
+  .project-container {
+    justify-content: center;
+  }
+  .project-container .card-items {
+    flex: 1 0 100%;
   }
 }
-@media (min-width: 1280px) and (max-width: 1920px) {
+@media only screen and (min-width: 768px) and (max-width: 1280px) {
+  .project-container {
+    justify-content: center;
+    max-width: 800px;
+  }
+  .project-container .card-items {
+    flex: 1 0 100%;
+  }
+}
+@media only screen and (min-width: 1280px) {
   .card-container {
     max-width: 1000px;
   }

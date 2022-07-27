@@ -16,8 +16,8 @@ class Footer {
     <a class="footer-nav-item" href="#">Personal Project</a>
     <a class="footer-nav-item" href="#">Opensource Project</a>
     <a class="footer-nav-item" href="#">Writing</a>
-    <a class="footer-nav-item" href="#">Github icon</a>
-    <a class="footer-nav-item" href="#">email icon</a>
+    <a class="footer-nav-item" href="https://github.com/wongwinnie198"><i class="fa fa-github" aria-hidden="true"></i></a>
+    <a class="footer-nav-item" href="https://www.linkedin.com/in/wing-man-wong-7a95b386/"><i class="fa fa-linkedin" aria-hidden="true"></i>
     `;
     Object.assign(copyRightContainer, { className: "footer-copyright" });
     copyRightContainer.innerHTML = `

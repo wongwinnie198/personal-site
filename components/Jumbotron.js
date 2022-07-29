@@ -5,9 +5,9 @@ class Jumbotron {
   }
   _getImagePath() {
     return {
-      person: "./public/jumbotron_coder.svg",
-      word: "./public/jumbotron_word.jpg",
-      color: "./public/jumbotron_waterColor.jpg",
+      person: "./personal-site/public/jumbotron_coder.svg",
+      word: "./personal-site/public/jumbotron_word.jpg",
+      color: "./personal-site/public/jumbotron_waterColor.jpg",
     };
   }
 

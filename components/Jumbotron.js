@@ -1,13 +1,14 @@
 const jumbotronData = [{}];
+const PROD_SITE_URL = "https://wongwinnie198.github.io/personal-site/";
 class Jumbotron {
   constructor(props) {
     this.state = props;
   }
   _getImagePath() {
     return {
-      person: "./personal-site/public/jumbotron_coder.svg",
-      word: "./personal-site/public/jumbotron_word.jpg",
-      color: "./personal-site/public/jumbotron_waterColor.jpg",
+      person: window.location.href.includes(PROD_SITE_URL)?"./personal-site/public/jumbotron_coder.svg":"./public/jumbotron_coder.svg",
+      word: window.location.href.includes(PROD_SITE_URL)?"./personal-site/public/jumbotron_word.jpg":"./public/jumbotron_word.jpg",
+      color: window.location.href.includes(PROD_SITE_URL)?"./personal-site/public/jumbotron_waterColor.jpg":"./public/jumbotron_waterColor.jpg",
     };
   }
 

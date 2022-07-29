@@ -57,10 +57,10 @@ class NavBar {
 
     Object.assign(navListDiv, { className: "nav-list", id: "nav-list" });
     navListDiv.innerHTML = `
-    <a class="nav-item" href="#">About</a>
-    <a class="nav-item" href="#">Personal Project</a>
-    <a class="nav-item" href="#">Opensource Project</a>
-    <a class="nav-item" href="#">Writing</a>
+    <a class="nav-item" href="#about" data-scroll>About</a>
+    <a class="nav-item" href="#project" data-scroll>Personal Project</a>
+    <a class="nav-item" href="#project" data-scroll>Opensource Project</a>
+    <a class="nav-item" href="#writing" data-scroll>Writing</a>
     <a class="nav-item" href="https://github.com/wongwinnie198"><i class="fa fa-github" aria-hidden="true"></i></a>
     <a class="nav-item" href="https://www.linkedin.com/in/wing-man-wong-7a95b386/"><i class="fa fa-linkedin" aria-hidden="true"></i>
     </a>

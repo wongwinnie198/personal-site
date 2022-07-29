@@ -5,9 +5,9 @@ class Jumbotron {
   }
   _getImagePath() {
     return {
-      person: "../public/jumbotron_coder.svg",
-      word: "../public/jumbotron_word.jpg",
-      color: "../public/jumbotron_waterColor.jpg",
+      person: "./public/jumbotron_coder.svg",
+      word: "./public/jumbotron_word.jpg",
+      color: "./public/jumbotron_waterColor.jpg",
     };
   }
 
@@ -19,26 +19,6 @@ class Jumbotron {
    * }
    * @param  {...any}
    */
-  // _createDiv(customDiv, ...divs) {
-  //   console.log(customDiv, ...divs);
-  //   const customArr = [...customDiv, ...divs];
-
-  //   Object.assign(document.createElement(customArr[0].tag), {
-  //     className: customArr[0].className,
-  //   });
-  //   const testDiv = document.querySelector(`.${customArr[0].className}`);
-  //   // testDiv.innerHTML = `<p>123</p>`;
-  //   //   const divArr = [];
-  //   customArr.map((item, _) => {
-  //     // const testDiv = document.createElement(customArr[0].tag);
-  //     // Object.assign(item, { className: `${item}` });
-  //     //     // item.innerHTML = `<p>test</p>`
-  //     //     divArr.push(item);
-  //     //     console.log(item)
-  //   });
-  //   console.log(customArr);
-  //   console.log(testDiv);
-  // }
   /**
    * render()
    * @returns an array of HTMLdivElements to be looped in

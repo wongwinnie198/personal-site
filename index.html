@@ -12,12 +12,26 @@
     <title>Winnie Wong</title>
   </head>
   <body>
-    <nav class="globNav"></nav>
-    <div class="jumbotron"></div>
-    <main class="project"></main>
-    <footer class="footer"></footer>
+    <nav class="globNav" id="globNav"></nav>
+    <div class="jumbotron" id="jumbotron"></div>
+    <div class="about" id="about"></div>
+    <main class="project" id="project"></main>
+    <footer class="footer" id="footer"></footer>
+    <script>
+      document.addEventListener(
+        "DOMContentLoaded",
+        () => {
+          const scroller = new SweetScroll({
+
+          });
+        },
+        false
+      );
+    </script>
+    <script src="https://unpkg.com/sweet-scroll/sweet-scroll.min.js"></script>
     <script type="module" defer src="components/NavBar.js"></script>
     <script type="module" defer src="components/Jumbotron.js"></script>
+    <script type="module" defer src="components/About.js"></script>
     <script type="module" defer src="components/Footer.js"></script>
     <script type="module" defer src="components/Project.js"></script>
   </body>

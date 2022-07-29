@@ -23,6 +23,7 @@ $mediumBreakpoint: 812px;
   src: url("../../public/FontsFree-Net-FontsFree-Net-Proxima-Nova-Light.ttf");
 }
 
+
 // navigation
 .globNav {
   overflow: hidden;
@@ -235,6 +236,35 @@ $mediumBreakpoint: 812px;
   }
 }
 
+//about
+.about {
+  background-color: $mainBgColor;
+  .about-container {
+    width: 100%;
+    .about-title {
+      text-align: center;
+      text-transform: uppercase;
+      font-family: "Proxima Nova";
+      font-size: $title-font-size;
+      padding: calc($projectTitleVerticalPadding * 2) 0;
+      &::after {
+        border-top: 2px solid $projectTitleUnderBorder;
+        display: block;
+        position: relative;
+        top: $projectTitleVerticalPadding - calc($projectTitleVerticalPadding/2);
+        margin: 0 auto;
+        width: 25%;
+        content: "";
+      }
+    }
+    .about-content{
+      font-family: "Proxima Nova Light";
+      text-align: center;
+      text-transform: uppercase;
+      padding: 2rem 0 ;
+    }
+  }
+}
 //project
 main {
   background-color: $mainBgColor;
@@ -245,6 +275,7 @@ main {
     text-align: center;
     text-transform: uppercase;
     font-family: "Proxima Nova Light";
+    font-size: $title-font-size;
     padding: calc($projectTitleVerticalPadding * 2) 0
       $projectTitleVerticalPadding 0;
     &::after {
